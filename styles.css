@@ -915,3 +915,4 @@ input[type=range]{accent-color:#134094}
 .tl.dark li{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:#fff}
 @media(max-width:900px){.tl{grid-template-columns:1fr}.tl .side{position:relative;top:auto;display:grid;grid-template-columns:auto 1fr;gap:16px 24px;align-items:center;margin-bottom:26px}.tl .side .cnt{font-size:64px}.tl .side .cur{margin:0;min-height:0;font-size:20px}.tl .side .phs{grid-column:1/-1;margin-top:0}}
 @media(prefers-reduced-motion:reduce){.tl li{opacity:1!important;transform:none!important}}
+.tl .list{overflow-x:clip}
