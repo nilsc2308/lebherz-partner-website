@@ -294,7 +294,8 @@
     paths.forEach(p => { const L = p.getTotalLength(); p.style.strokeDasharray = L; p.style.strokeDashoffset = L; });
     gsap.to(paths, { strokeDashoffset: 0, ease: 'none', scrollTrigger: { trigger: flow.querySelector('.steps'), start: 'top 70%', end: 'bottom 60%', scrub: .6 } });
     if (dot && main) gsap.to(dot, { opacity: 1, ease: 'none', scrollTrigger: { trigger: flow.querySelector('.steps'), start: 'top 70%', end: 'bottom 60%', scrub: .6, onUpdate: st => { const pt = main.getPointAtLength(main.getTotalLength() * st.progress); dot.setAttribute('cx', pt.x); dot.setAttribute('cy', pt.y); } } });
-    steps.forEach((st, i) => ScrollTrigger.create({ trigger: st, start: 'top 60%', end: 'bottom 40%', onToggle: t => { st.classList.toggle('on', t.isActive); if (t.isActive) nodes.forEach((n, k) => n.classList.toggle('on', k <= i)); } }));
+    const mob = matchMedia('(max-width: 900px)').matches;
+    steps.forEach((st, i) => ScrollTrigger.create({ trigger: st, start: mob ? 'top 92%' : 'top 60%', end: mob ? 'bottom 60%' : 'bottom 40%', onToggle: t => { st.classList.toggle('on', t.isActive); if (t.isActive) nodes.forEach((n, k) => n.classList.toggle('on', k <= i)); } }));
   }
   // Sonnenbogen im Live-Zähler
   const ringy = document.querySelector('.arc .ringy');

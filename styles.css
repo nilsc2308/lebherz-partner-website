@@ -916,3 +916,11 @@ input[type=range]{accent-color:#134094}
 @media(max-width:900px){.tl{grid-template-columns:1fr}.tl .side{position:relative;top:auto;display:grid;grid-template-columns:auto 1fr;gap:16px 24px;align-items:center;margin-bottom:26px}.tl .side .cnt{font-size:64px}.tl .side .cur{margin:0;min-height:0;font-size:20px}.tl .side .phs{grid-column:1/-1;margin-top:0}}
 @media(prefers-reduced-motion:reduce){.tl li{opacity:1!important;transform:none!important}}
 .tl .list{overflow-x:clip}
+/* Handy: Energiefluss-Grafik bleibt oben kleben, Schritte laufen darunter durch */
+@media(max-width:900px){
+  .flow .art{position:sticky;top:64px;z-index:2;height:auto;padding:8px 0 14px;margin:0 calc(-1 * var(--gutter));background:linear-gradient(#f5f5f7 88%,rgba(245,245,247,0));}
+  .flow svg{max-height:34vh;width:auto;max-width:100%}
+  .flow .node text{font-size:13px}
+  .flow .steps{gap:34vh;padding:4vh 0 24vh}
+  .fstep{opacity:.35}.fstep.on{opacity:1}
+}
