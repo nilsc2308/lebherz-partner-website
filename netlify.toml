@@ -19,6 +19,28 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+
+# Weiterleitungen alter Adressen von ib-lup.de
+[[redirects]]
+  from = "/engineering-services.html"
+  to = "/engineering.html"
+  status = 301
+
+[[redirects]]
+  from = "/team.html"
+  to = "/ueber-uns.html"
+  status = 301
+
+[[redirects]]
+  from = "/datenschutzerklaerung.html"
+  to = "/datenschutz.html"
+  status = 301
+
+[[redirects]]
+  from = "/cookieeinstellungen.html"
+  to = "/datenschutz.html"
+  status = 301
+
 [[redirects]]
   from = "/*"
   to = "/404.html"

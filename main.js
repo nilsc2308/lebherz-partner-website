@@ -404,6 +404,9 @@
     tl.to({}, { duration: 1 }, 100);
   }
 
+  // Szene: Fotos 2–5 erst nach dem Laden nachziehen (Startseite schneller)
+  const lateImgs = () => document.querySelectorAll('img[data-src]').forEach(im => { im.srcset = im.dataset.srcset; im.src = im.dataset.src; im.removeAttribute('data-src'); im.removeAttribute('data-srcset'); });
+  if (document.readyState === 'complete') lateImgs(); else window.addEventListener('load', lateImgs, { once: true });
   window.addEventListener('load', () => {
     ScrollTrigger.refresh();
     const el = location.hash && document.getElementById(location.hash.slice(1));

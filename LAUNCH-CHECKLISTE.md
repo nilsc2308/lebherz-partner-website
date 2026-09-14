@@ -25,6 +25,31 @@ Legende: **✅ erledigt** · **⚠️ offen, braucht eine Angabe oder Entscheidu
 | ⚠️ | **Solarrechner Eturnity** – wird nur verlinkt (neues Fenster), nicht mehr eingebettet – dadurch kein Cookie-Banner nötig. Wenn die Einbettung gewünscht ist, braucht die Seite wieder eine Einwilligungslösung | `index.html`, `photovoltaik.html` |
 | ⚠️ | **Unsplash-Fotos von Herstellerkonten** – `hz-wp*.webp` und `03-waerme.webp` stammen vom Unsplash-Konto „alpha innotec“, `rg-3.webp` von „Sungrow EMEA“ (Unsplash-Lizenz, frei nutzbar). Falls keine fremden Marken gezeigt werden sollen: austauschen | `img/`, `heizsysteme.html`, `index.html` |
 
+## Deine Standard-Checkliste – Stand 14.9.2026 (alles geprüft)
+
+| | Punkt | Stand |
+|---|---|---|
+| ✅⚠️ | **Datenschutzerklärung** | Von ib-lup.de übernommen und an die neue Technik angepasst (kein GTM/CCM19/Adobe Fonts/Eturnity-iFrame mehr; neu: Kontaktformular, lokale Schriften, jsDelivr, Karte per Klick, sessionStorage). **Zwei Platzhalter ausfüllen: Hoster und Formulardienst** |
+| ✅ | **Impressum** | Wortgleich übernommen (HRB 6464, USt-IdNr. DE/BE, Vertretung), TMG→DDG, Bildnachweis ergänzt |
+| ✅ | **Cookie Consent** | Nicht nötig – keine Cookies, kein Tracking, keine Drittanbieter-Einbettung ohne Klick. In der Datenschutzerklärung so erklärt |
+| ✅ | **Mobile Version** | 390 px (iPhone) in Chromium und WebKit, alle 14 Seiten durchgescrollt, kein Querscrollen; Energiefluss-Grafik klebt auf dem Handy oben; Leistungspanels und Ablauf per Wischen |
+| ✅ | **Meta Titles** | Alle 16 Seiten, 44–66 Zeichen, mit Ort/Leistung, gekürzt am 14.9. |
+| ✅ | **Meta Descriptions** | Alle Seiten einzeln, ≤ 155 Zeichen |
+| ✅ | **Favicon** | `favicon.svg` (Haus-Bildmarke aus dem Logo auf Blau) + `apple-touch-icon.png` 180 px |
+| ✅ | **Sitemap.xml** | 15 URLs (ohne danke/404), Datum 14.9.2026 |
+| ✅ | **Robots.txt** | Alles frei, `danke.html` ausgeschlossen, Verweis auf Sitemap |
+| ✅⚠️ | **Canonical URLs** | Auf jeder Seite gesetzt → `https://www.ib-lup.de/…`. **Domain beim Livegang bestätigen**, sonst überall ersetzen |
+| ✅ | **404-Seite** | `404.html` mit Rückweg; GitHub Pages nutzt sie automatisch, Netlify per Regel in `netlify.toml` |
+| ✅ | **Broken Links** | Skript-Prüfung 14.9.: alle internen Links, Sprungmarken (`#…`) und Bildpfade vorhanden; alle externen Links (jsDelivr, Eturnity, Instagram, OSM, e-recht24, stephanwieland.de) antworten mit 200 |
+| ✅ | **Performance** | Startseite lokal gemessen: **Desktop 818 KB bis „load“ (265 ms), Handy 438 KB (232 ms)**, LCP ≈ 0,4 s Desktop, CLS 0,000. Szene-Fotos 2–5 werden erst nach dem Laden nachgezogen; alle Fotos WebP in zwei Größen, `srcset`, `width`/`height`, Lazy-Loading; Schrift lokal + vorgeladen; Cache-Header in `netlify.toml` |
+| ✅ | **Accessibility Basics** | Sprung-zum-Inhalt-Link, sichtbare Fokus-Styles, Tastaturbedienung (Menü, Rechner, Quiz, Ablauf, FAQ, Zeitstrahl-Inhalte), `aria-pressed`/`aria-expanded`/`aria-live`, Überschriften-Hierarchie, Kontrast AA (Blau/Weiß 9,7:1, Blau/Gelb 6,4:1), `prefers-reduced-motion` schaltet Szene, Vorhang, Laufschrift und Scroll-Effekte ab |
+| ✅⚠️ | **Kontaktformular getestet** | Automatisch geprüft 14.9.: Pflichtfelder blockieren, falsche E-Mail blockiert, Themen-Kacheln setzen die Auswahl, `?thema=heizung` belegt vor, gültige Eingabe → `danke.html`. **Versand selbst braucht Netlify Forms (oder anderen Dienst) – auf GitHub Pages geht keine Mail raus** |
+| ✅ | **Alt-Texte** | Alle Bilder haben `alt`; beschreibend bei Inhaltsbildern, leer bei rein dekorativen (Szene, Panels) |
+| ⚠️ | **Google Analytics / Tracking** | Bewusst **nicht** eingebaut (kein Banner nötig). Wenn gewünscht: eigener Consent-Banner + GA4 wie bei CO2NSULTING v2 (Consent Mode v2, lädt erst nach Zustimmung) – dann Datenschutzerklärung ergänzen |
+| ✅ | **Open Graph / Social Sharing** | `og:title`, `og:description`, `og:url`, `og:locale`, `twitter:card` je Seite; eigenes Share-Bild `img/og.jpg` (1200×630, Aachener PV-Dach + Logo + Claim) |
+| ✅⚠️ | **Lokale SEO-Daten** | JSON-LD `LocalBusiness` auf allen Seiten: Name, Adresse Jakobstraße 218, 52064 Aachen, Telefon +49 241 47707-0, E-Mail, Geo 50.7702/6.0747, Einzugsgebiet, Logo, Instagram. Karte (OpenStreetMap) per Klick + Routenlink. **Öffnungszeiten fehlen** (auf ib-lup.de nicht angegeben) – bitte nennen, dann trage ich sie in Kontakt + JSON-LD ein. **Google-Unternehmensprofil** gehört dem Kunden – Adresse/Telefon dort abgleichen |
+| ⏳ | **Indexierung bei Google** | Erst nach Livegang: Google Search Console anlegen, Sitemap `https://<domain>/sitemap.xml` einreichen, Startseite per URL-Prüfung anfordern. Alte URLs weiterleiten: `engineering-services.html`→`engineering.html`, `team.html`→`ueber-uns.html`, `datenschutzerklaerung.html`→`datenschutz.html`, `cookieeinstellungen.html`→`datenschutz.html` (auf Netlify per `netlify.toml`, sonst `.htaccess`) |
+
 ## Marke
 
 | | Punkt | Stand |
