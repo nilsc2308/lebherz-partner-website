@@ -216,6 +216,29 @@
     const q = new URLSearchParams(location.search).get('thema'); if (q) { const b = [...pick.querySelectorAll('button')].find(x => x.dataset.v.toLowerCase().includes(q.toLowerCase())); if (b) choose(b.dataset.v); }
   }
 
+  // Live-Zähler: rechnerischer Solarstrom der von uns gebauten Anlagen seit Seitenaufruf (20.000.000 kWh / Jahr)
+  const liveKwh = document.getElementById('liveKwh');
+  if (liveKwh) {
+    const PER_SEC = 20000000 / (365 * 24 * 3600); const t0 = performance.now();
+    const km = document.getElementById('liveKm'), cups = document.getElementById('liveCups');
+    const tick = () => {
+      const k = (performance.now() - t0) / 1000 * PER_SEC;
+      liveKwh.textContent = k.toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+      if (km) km.textContent = Math.round(k / 17 * 100).toLocaleString('de-DE');
+      if (cups) cups.textContent = Math.round(k / .1).toLocaleString('de-DE');
+      requestAnimationFrame(tick);
+    };
+    tick();
+  }
+  // Sticky-Sektionsnavigation auf Unterseiten
+  const subnav = document.querySelector('.subnav');
+  if (subnav) {
+    const links = [...subnav.querySelectorAll('a')];
+    const secs = links.map(a => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id)); }), { rootMargin: '-30% 0px -60% 0px' });
+    secs.forEach(x => io.observe(x));
+  }
+
   if (reduce) return;
 
   // ---------- Scroll-Reveals ----------
@@ -255,6 +278,51 @@
     const dist = () => track.scrollWidth - track.parentElement.clientWidth;
     gsap.to(track, { x: () => -dist(), ease: 'none', scrollTrigger: { trigger: '.process', start: 'center center', end: () => '+=' + dist(), pin: true, scrub: 1, invalidateOnRefresh: true } });
   }});
+
+
+  // ---------- V2-Bausteine ----------
+  // Outline-Laufschrift: läuft von selbst, Scrollen beschleunigt und neigt sie
+  document.querySelectorAll('.bigwords .row').forEach(row => {
+    const half = () => row.scrollWidth / 2; let x = 0, vel = 0;
+    ScrollTrigger.create({ onUpdate: st => { vel += st.getVelocity() / 900; } });
+    gsap.ticker.add(() => { x -= (.6 + Math.min(Math.abs(vel), 14)); vel *= .92; if (x <= -half()) x += half(); gsap.set(row, { x, skewX: gsap.utils.clamp(-8, 8, -vel) }); });
+  });
+  // Energiefluss: Linien zeichnen sich, Schritte schalten Knoten ein
+  const flow = document.querySelector('.flow');
+  if (flow) {
+    const paths = flow.querySelectorAll('.p'), nodes = flow.querySelectorAll('.node'), steps = flow.querySelectorAll('.fstep'), dot = flow.querySelector('.dot'), main = flow.querySelector('#flowMain');
+    paths.forEach(p => { const L = p.getTotalLength(); p.style.strokeDasharray = L; p.style.strokeDashoffset = L; });
+    gsap.to(paths, { strokeDashoffset: 0, ease: 'none', scrollTrigger: { trigger: flow.querySelector('.steps'), start: 'top 70%', end: 'bottom 60%', scrub: .6 } });
+    if (dot && main) gsap.to(dot, { opacity: 1, ease: 'none', scrollTrigger: { trigger: flow.querySelector('.steps'), start: 'top 70%', end: 'bottom 60%', scrub: .6, onUpdate: st => { const pt = main.getPointAtLength(main.getTotalLength() * st.progress); dot.setAttribute('cx', pt.x); dot.setAttribute('cy', pt.y); } } });
+    steps.forEach((st, i) => ScrollTrigger.create({ trigger: st, start: 'top 60%', end: 'bottom 40%', onToggle: t => { st.classList.toggle('on', t.isActive); if (t.isActive) nodes.forEach((n, k) => n.classList.toggle('on', k <= i)); } }));
+  }
+  // Sonnenbogen im Live-Zähler
+  const ringy = document.querySelector('.arc .ringy');
+  if (ringy) { const L = ringy.getTotalLength(); ringy.style.strokeDasharray = L; ringy.style.strokeDashoffset = L; gsap.to(ringy, { strokeDashoffset: 0, duration: 2.4, ease: 'power3.inOut', scrollTrigger: { trigger: '.arc', start: 'top 80%' } }); }
+  // Horizontale Vollbild-Panels (Desktop gepinnt, Mobile wischen)
+  const rail = document.querySelector('.hp .rail');
+  if (rail) ScrollTrigger.matchMedia({ '(min-width: 821px)': () => {
+    const dist = () => rail.scrollWidth - innerWidth + 16;
+    const bar = document.querySelector('.hp .foot .bar i');
+    gsap.to(rail, { x: () => -dist(), ease: 'none', scrollTrigger: { trigger: '.hp', start: 'top top', end: () => '+=' + dist(), pin: true, scrub: 1, invalidateOnRefresh: true, onUpdate: st => bar && (bar.style.width = st.progress * 100 + '%') } });
+    rail.querySelectorAll('.panel img').forEach(im => gsap.fromTo(im, { xPercent: -6 }, { xPercent: 6, ease: 'none', scrollTrigger: { trigger: '.hp', start: 'top top', end: () => '+=' + dist(), scrub: 1 } }));
+  }});
+  // Karten-Stapel: jede Karte schrumpft leicht, wenn die nächste darüber schiebt
+  const scards = document.querySelectorAll('.scard');
+  if (scards.length) ScrollTrigger.matchMedia({ '(min-width: 821px)': () => {
+    scards.forEach((c, i) => { if (i === scards.length - 1) return; gsap.to(c, { scale: .92 - (scards.length - 2 - i) * .02, opacity: .55, ease: 'none', scrollTrigger: { trigger: scards[i + 1], start: 'top 80%', end: 'top 12%', scrub: true } }); });
+  }});
+  // Scrub-Text
+  document.querySelectorAll('.scrub p').forEach(p => {
+    const ws = p.querySelectorAll('.sw');
+    ScrollTrigger.create({ trigger: p, start: 'top 75%', end: 'bottom 45%', scrub: true, onUpdate: st => { const n = Math.floor(st.progress * ws.length); ws.forEach((w, i) => w.classList.toggle('on', i <= n)); } });
+  });
+  // Parallax-Kolonnen
+  document.querySelectorAll('.cols .col').forEach((c, i) => gsap.fromTo(c, { y: [40, -60, 20][i] }, { y: [-60, 60, -30][i], ease: 'none', scrollTrigger: { trigger: c.parentElement, start: 'top bottom', end: 'bottom top', scrub: true } }));
+  // Split-Header: Foto-Parallax
+  document.querySelectorAll('.ph2 .media img').forEach(im => gsap.fromTo(im, { yPercent: -6 }, { yPercent: 6, ease: 'none', scrollTrigger: { trigger: im.parentElement, start: 'top bottom', end: 'bottom top', scrub: true } }));
+  // Editorial-Kopf: Index-Linie wächst
+  document.querySelectorAll('.ed .idx').forEach(el => gsap.from(el, { clipPath: 'inset(0 100% 0 0)', duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 85%' } }));
 
   // ---------- Foto-Scroll-Through (Startseite) ----------
   if (scene) {

@@ -100,80 +100,108 @@
   </div>
 </section>
 
-<!-- LAUFBAND -->
-<div class="marquee" aria-label="Unsere Themen"><div class="row">
-  <span>Photovoltaik</span><span>Batteriespeicher</span><span>Ladepunkte &amp; Wallbox</span><span>Wärmepumpe</span><span>Pelletheizung</span><span>Solarthermie</span><span>Förderung &amp; Anträge</span><span>Großanlagen</span><span>Engineering Services</span><span>Abnahme von Solarparks</span><span>Schadensanalyse per Drohne</span><span>Pflege &amp; Wartung</span>
-  <span>Photovoltaik</span><span>Batteriespeicher</span><span>Ladepunkte &amp; Wallbox</span><span>Wärmepumpe</span><span>Pelletheizung</span><span>Solarthermie</span><span>Förderung &amp; Anträge</span><span>Großanlagen</span><span>Engineering Services</span><span>Abnahme von Solarparks</span><span>Schadensanalyse per Drohne</span><span>Pflege &amp; Wartung</span>
-</div></div>
+<!-- OUTLINE-LAUFSCHRIFT -->
+<div class="bigwords" aria-hidden="true"><div class="row">
+  <span>Photovoltaik</span><span>Wärmepumpe</span><span>Speicher</span><span>Großanlagen</span><span>Engineering</span><i>☀</i>
+  <span>Photovoltaik</span><span>Wärmepumpe</span><span>Speicher</span><span>Großanlagen</span><span>Engineering</span><i>☀</i>
+</div><div class="wrap sub"><span>Lebherz &amp; Partner GmbH · Jakobstraße 218 · Aachen</span><span>Handwerksbetrieb + Ingenieurbüro seit vielen Jahren in der Region</span></div></div>
 
-<!-- ZAHLEN -->
-<section class="sec numbers"><div class="wrap">
-  <div class="sec-head"><p class="eyebrow">Unsere High-Lights</p><h2 class="h-l split">Erfahrung, die man in Kilowattstunden messen kann.</h2></div>
+<!-- ENERGIEFLUSS -->
+<section class="sec flow" id="energie"><div class="wrap">
+  <div class="ed"><span class="idx">01 — SO FUNKTIONIERT'S</span><div><h2 class="h-l split">Vom Sonnenstrahl bis zur Steckdose.</h2><p class="lead reveal">Scrollen Sie durch den Weg Ihres Stroms. Jede Station planen und bauen wir – und stimmen sie aufeinander ab.</p></div></div>
   <div class="grid">
-    <div class="num reveal"><b><span class="count" data-to="2500">0</span><em>+</em></b><small>PV-Anlagen haben unsere Mitarbeiter im Laufe der Zeit in der Aachener Region gebaut.</small></div>
-    <div class="num reveal"><b><span class="count" data-to="20">0</span><em>Mio.</em></b><small>Kilowattstunden Strom werden damit pro Jahr erzeugt – rund 20.000.000 kWh.</small></div>
-    <div class="num reveal"><b><span class="count" data-to="4">0</span></b><small>Leistungsbereiche: Photovoltaik, Heizsysteme, Großanlagen und Engineering Services.</small></div>
+    <div class="art" aria-hidden="true">
+      <svg viewBox="0 0 600 560">
+        <path class="p glow" d="M120 90 C 220 90, 260 110, 330 130"/>
+        <path class="p" id="flowMain" d="M120 90 C 220 90, 260 110, 330 130 C 380 150, 330 240, 300 290 C 280 320, 330 380, 440 430"/>
+        <path class="p" d="M300 290 C 240 330, 200 360, 150 430"/>
+        <path class="p" d="M300 290 C 380 300, 470 280, 520 250"/>
+        <circle class="dot" r="7"/>
+        <g class="node"><circle class="bg" cx="120" cy="90" r="46"/><g class="sun" transform="translate(120 90)"><circle class="ic" r="13"/><g class="ic"><path d="M0 -24v6M0 18v6M-24 0h6M18 0h6M-17 -17l4 4M13 13l4 4M-17 17l4-4M13 -13l4-4"/></g></g><text x="120" y="156">SONNE</text></g>
+        <g class="node"><circle class="bg" cx="330" cy="130" r="46"/><g class="ic" transform="translate(330 130)"><path d="M-24 -6 L-14 -20 H24 L14 -6 Z M-24 -6 H14 M-19 -13 H19 M-9 -20 L-14 -6 M2 -20 L-3 -6 M13 -20 L8 -6"/><path d="M-26 8 H26 M-22 8 L-24 22 M22 8 L24 22"/></g><text x="330" y="196">DACH · MODULE</text></g>
+        <g class="node"><circle class="bg" cx="300" cy="290" r="46"/><g class="ic" transform="translate(300 290)"><rect x="-20" y="-16" width="40" height="32" rx="6"/><path d="M-10 -4 h6 l3 -6 l4 14 l3 -8 h6"/></g><text x="300" y="356">WECHSELRICHTER</text></g>
+        <g class="node"><circle class="bg" cx="150" cy="430" r="46"/><g class="ic" transform="translate(150 430)"><rect x="-18" y="-22" width="36" height="44" rx="6"/><path d="M-6 -26 h12 M-10 6 h20 M-10 14 h20 M-4 -12 l-6 10 h8 l-4 8"/></g><text x="150" y="496">SPEICHER</text></g>
+        <g class="node"><circle class="bg" cx="440" cy="430" r="46"/><g class="ic" transform="translate(440 430)"><path d="M-24 2 L0 -20 L24 2 M-18 -3 V22 H18 V-3 M-4 22 V8 H4 V22"/><path d="M12 -6 v-8 h6 v8"/></g><text x="440" y="496">HAUS · WÄRMEPUMPE · AUTO</text></g>
+        <g class="node"><circle class="bg" cx="520" cy="250" r="40"/><g class="ic" transform="translate(520 250)"><path d="M0 -20 L-14 -8 H14 Z M-14 -8 L-20 20 M14 -8 L20 20 M-8 -8 L-3 20 M8 -8 L3 20 M-16 6 H16"/></g><text x="520" y="308">NETZ</text></g>
+      </svg>
+    </div>
+    <div class="steps">
+      <div class="fstep"><p class="k">01 · SONNE &amp; DACH</p><h3>Erst das Dach lesen, dann belegen.</h3><p>Ausrichtung, Neigung, Verschattung, Statik: Beim Erstgespräch vor Ort dimensionieren wir Ihre Anlage gemäß Ihrem individuellen Bedarf – nicht die größte, sondern die richtige.</p><div class="v"><div><b>~950</b><small>kWh je kWp und Jahr, Richtwert Region Aachen</small></div><div><b>2.500+</b><small>Anlagen, die unsere Mitarbeiter hier gebaut haben</small></div></div></div>
+      <div class="fstep"><p class="k">02 · WECHSELRICHTER</p><h3>Aus Gleichstrom wird Hausstrom.</h3><p>Wir wählen die Module und integrieren den Wechselrichter so, dass er zur Anlage, zum Zählerschrank und zu späteren Erweiterungen passt – inklusive Anmeldung beim Netzbetreiber.</p></div>
+      <div class="fstep"><p class="k">03 · SPEICHER</p><h3>Mittagssonne für den Abend aufheben.</h3><p>Batteriespeicher werden so konfiguriert, dass möglichst viel Ihres Stroms im Haus bleibt. Ohne Speicher nutzen typische Haushalte rund 30 % ihres Solarstroms selbst, mit Speicher deutlich mehr.</p></div>
+      <div class="fstep"><p class="k">04 · HAUS, WÄRMEPUMPE, AUTO</p><h3>Wärme und Mobilität vom eigenen Dach.</h3><p>Wärmepumpe, Ladepunkt und Pufferspeicher binden wir ein – mit Messkonzept 8 und Smart-Grid-Signal, damit die Wärmepumpe dann läuft, wenn die Sonne scheint.</p></div>
+      <div class="fstep"><p class="k">05 · NETZ &amp; MONITORING</p><h3>Der Rest wird eingespeist – und alles bleibt sichtbar.</h3><p>Überschüsse gehen vergütet ins Netz. Nach der Inbetriebnahme richten wir die Apps ein, führen Sie ein und kümmern uns auf Wunsch um Pflege und Wartung.</p><div class="v"><div><a class="btn btn-primary" href="photovoltaik.html">Photovoltaik im Detail</a></div></div></div>
+    </div>
   </div>
 </div></section>
 
-<!-- WIR ERLEDIGEN DAS -->
-<section class="sec about" id="konzept"><div class="wrap"><div class="split2">
-  <div class="reveal"><img src="img/k-montage-3-m.webp" srcset="img/k-montage-3-m.webp 1000w, img/k-montage-3.webp 2000w" sizes="(max-width: 900px) 100vw, 50vw" alt="Montage einer Photovoltaikanlage durch das Team von Lebherz &amp; Partner" width="2000" height="2000" loading="lazy" decoding="async"></div>
+<!-- LIVE-ZÄHLER -->
+<section class="sec live" id="live"><div class="wrap"><div class="grid">
   <div>
-    <p class="eyebrow">Wir erledigen das</p>
-    <h2 class="h-m split">Ihr Solarstromkonzept – aus einer Hand.</h2>
-    <p class="lead reveal" style="margin-top:20px">Hier sind Sie richtig: Lebherz &amp; Partner verbindet die langjährige Erfahrung eines Handwerksbetriebs im Bereich Photovoltaik, Heizsysteme und Gebäudetechnik mit dem Know-how eines Ingenieurbüros.</p>
-    <p class="reveal" style="margin-top:18px;line-height:1.6;color:var(--ink-2)">Mit unserer Spezialisierung auf solartechnische Anlagen qualifizieren wir uns als Partner für zukunftsfähige Energiesysteme – sowohl für Einfamilienhäuser als auch für Großanlagen. Wir entwickeln gemeinsam Ihr persönliches Energie-Konzept, behalten die Kosten im Blick und stellen sicher, dass Ihre Anlage technisch aktuell, nachhaltig und zukunftsfähig ist.</p>
-    <div class="reveal" style="margin-top:28px"><a class="btn btn-primary" href="photovoltaik.html">Photovoltaik</a> <a class="btn btn-ghost" href="ueber-uns.html">Das Team kennenlernen <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <p class="eyebrow">Seit Sie diese Seite geöffnet haben</p>
+    <div class="huge reveal"><span id="liveKwh">0,0</span><small>kWh</small></div>
+    <p class="lbl reveal">Solarstrom, den die von unseren Mitarbeitern gebauten Anlagen in der Aachener Region rechnerisch in dieser Zeit erzeugt haben – rund 20.000.000 kWh im Jahr, gleichmäßig auf jede Sekunde verteilt.</p>
+    <div class="facts reveal">
+      <div><b><span class="count" data-to="2500">0</span>+</b><small>PV-Anlagen in der Aachener Region gebaut</small></div>
+      <div><b><span class="count" data-to="20">0</span> Mio.</b><small>Kilowattstunden Strom pro Jahr erzeugt</small></div>
+      <div><b><span id="liveKm">0</span> km</b><small>E-Auto-Reichweite aus diesem Strom (Richtwert 17 kWh/100 km)</small></div>
+      <div><b><span id="liveCups">0</span></b><small>Tassen Kaffee, die man damit kochen könnte (ca. 0,1 kWh je Tasse)</small></div>
+    </div>
   </div>
+  <div class="arc reveal" aria-hidden="true"><svg viewBox="0 0 400 400">
+    <circle class="ring" cx="200" cy="200" r="150"/><circle class="ring" cx="200" cy="200" r="110" stroke-dasharray="2 8"/>
+    <path class="ringy" d="M60 260 A150 150 0 0 1 340 260"/>
+    <g class="rays"><g transform="translate(200 200)"><line x1="0" y1="-52" x2="0" y2="-70"/><line x1="37" y1="-37" x2="50" y2="-50"/><line x1="52" y1="0" x2="70" y2="0"/><line x1="37" y1="37" x2="50" y2="50"/><line x1="0" y1="52" x2="0" y2="70"/><line x1="-37" y1="37" x2="-50" y2="50"/><line x1="-52" y1="0" x2="-70" y2="0"/><line x1="-37" y1="-37" x2="-50" y2="-50"/></g></g>
+    <circle class="sunball" cx="200" cy="200" r="40"/>
+    <text class="t" x="200" y="310">AACHEN · 50,77° N</text>
+  </svg></div>
 </div></div></section>
 
-<!-- BENTO -->
-<section class="sec" id="leistungen"><div class="wrap">
-  <div class="sec-head"><p class="eyebrow">Leistungen</p><h2 class="h-l split">Vom Einfamilienhaus bis zum Solarpark.</h2><p class="lead reveal">Vier Leistungsbereiche, ein Anspruch: Wir bringen Licht in den Dschungel der Möglichkeiten – und kümmern uns um Anträge, Förderung und Koordination der Baustelle.</p></div>
-  <div class="bento">
-    <a class="card c-1 reveal" href="photovoltaik.html"><div><span class="num-tag">01 · PHOTOVOLTAIK</span><h3>Willkommen auf der Sonnenseite.</h3><p>Planung, Montage, Inbetriebnahme und Wartung für Ihr Eigenheim – inklusive Speicher, Ladepunkten, Fördermöglichkeiten und dem kompletten Papierkram.</p></div><span class="tag">Beratung · Montage · Speicher · Wartung</span><span class="arrow" aria-hidden="true">→</span></a>
-    <a class="card c-2 dark-card reveal" href="heizsysteme.html"><div><span class="num-tag">02 · HEIZSYSTEME</span><h3>Heizsysteme für die Energiewende.</h3><p>Wärmepumpen und Biomasseheizungen – konzipiert, geplant und installiert. Mit Heizlastberechnung, Pufferspeicher und Smart-Grid-Anbindung.</p></div><span class="arrow" aria-hidden="true">→</span></a>
-    <a class="card c-3 green reveal" href="grossanlagen.html"><div><span class="num-tag">03 · GROSSANLAGEN</span><h3>Groß denken bei maximaler Planungssicherheit.</h3><p>Städtische und private Großanlagen – von der Planung bis zur Abnahme.</p></div><span class="arrow" aria-hidden="true">→</span></a>
-    <a class="card c-4 reveal" href="engineering.html"><div><span class="num-tag">04 · ENGINEERING SERVICES</span><h3>Wissenschaftlich, ganzheitlich, innovativ.</h3><p>Ingenieurleistungen für Architekten, Bauträger, Gemeinden und Investoren: Planung, Leistungsverzeichnisse, Bauleitung, Abnahmen, Schadensanalyse per Drohne.</p></div><span class="arrow" aria-hidden="true">→</span></a>
-    <a class="card c-2 reveal" href="https://solarrechner.eturnity.io/lebherz_und_partner/" target="_blank" rel="noopener"><div><span class="num-tag">SOLARRECHNER</span><h3>Lohnt sich Photovoltaik für Ihr Gebäude?</h3><p>Dachfläche, Ausrichtung, Verbrauch eingeben – Machbarkeit, Wirtschaftlichkeit und Amortisation in wenigen Klicks. Rechner unseres Partners Eturnity, öffnet in neuem Fenster.</p></div><span class="arrow" aria-hidden="true">↗</span></a>
+<!-- HORIZONTALE PANELS -->
+<section class="hp" id="leistungen">
+  <div class="wrap head"><div class="ed"><span class="idx">02 — LEISTUNGEN</span><div><h2 class="h-l split">Vom Einfamilienhaus bis zum Solarpark.</h2><p class="lead reveal">Vier Bereiche, ein Anspruch: Wir bringen Licht in den Dschungel der Möglichkeiten – und kümmern uns um Anträge, Förderung und die Koordination der Baustelle.</p></div></div></div>
+  <div class="rail">
+    <a class="panel" href="photovoltaik.html"><img src="img/k-montage-2-m.webp" srcset="img/k-montage-2-m.webp 1000w, img/k-montage-2.webp 1700w" sizes="80vw" alt="" width="1700" height="850" loading="lazy" decoding="async"><span class="n">01</span><h3>Photovoltaik fürs Eigenheim</h3><p>Planung, Module, Wechselrichter, Speicher, Ladepunkte, Förderung, Montage, Wartung – das komplette Paket aus einer Hand.</p><span class="go">Willkommen auf der Sonnenseite <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="panel" href="heizsysteme.html"><img src="img/hz-wp2-m.webp" srcset="img/hz-wp2-m.webp 1000w, img/hz-wp2.webp 2200w" sizes="80vw" alt="" width="2200" height="1467" loading="lazy" decoding="async"><span class="n">02</span><h3>Heizsysteme für die Energiewende</h3><p>Wärmepumpen und Biomasseheizungen – mit Heizlastberechnung, Pufferspeicher, Messkonzept 8 und Smart Grid.</p><span class="go">Heizsysteme <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="panel" href="grossanlagen.html"><img src="img/k-drohne-1-m.webp" srcset="img/k-drohne-1-m.webp 1000w, img/k-drohne-1.webp 1700w" sizes="80vw" alt="" width="1700" height="850" loading="lazy" decoding="async"><span class="n">03</span><h3>Großanlagen mit Planungssicherheit</h3><p>Städtische und private Großanlagen, Dachflächen und Solarparks – von der Begehung bis zur Abnahme.</p><span class="go">Großanlagen <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="panel" href="engineering.html"><img src="img/k-flachdach-m.webp" srcset="img/k-flachdach-m.webp 1000w, img/k-flachdach.webp 1700w" sizes="80vw" alt="" width="1700" height="850" loading="lazy" decoding="async"><span class="n">04</span><h3>Engineering Services</h3><p>Entwurfs- und Ausführungsplanung, Leistungsverzeichnisse, Bauleitung, Abnahmen von Solarparks, Schadensanalyse per Drohne.</p><span class="go">Ingenieurleistungen <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="panel last" href="https://solarrechner.eturnity.io/lebherz_und_partner/" target="_blank" rel="noopener"><span class="n">↗</span><h3>Lohnt sich Photovoltaik für Ihr Gebäude?</h3><p>Solarrechner unseres Partners Eturnity – Machbarkeit, Wirtschaftlichkeit, Amortisation in wenigen Klicks. Öffnet in neuem Fenster.</p><span class="go">Solarrechner starten <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
   </div>
-</div></section>
-
-<!-- FOTO-KACHELN -->
-<section class="sec isfp"><div class="wrap">
-  <div class="sec-head"><div><p class="eyebrow">Aus der Praxis</p><h2 class="h-l split">Gebaut in Aachen und der Region.</h2></div><p class="lead reveal">Ob Ziegeldach, Flachdach oder Freifläche: Unsere Montage-Teams arbeiten termingenau und kompetent – bei Produkten und Verarbeitung legen wir Wert auf höchste Qualitätsstandards.</p></div>
-  <div class="photos">
-    <a class="m reveal" href="photovoltaik.html"><img src="img/k-rathaus-m.webp" srcset="img/k-rathaus-m.webp 1000w, img/k-rathaus.webp 2000w" sizes="(max-width: 900px) 100vw, 33vw" alt="Montagearbeiten an der PV-Anlage der Mayerschen Buchhandlung in Aachen, im Hintergrund das Rathaus" width="2000" height="2000" loading="lazy" decoding="async"><div class="t"><span class="n">AACHEN · INNENSTADT</span><h3>PV-Anlage der Mayerschen Buchhandlung</h3><p>Montagearbeiten mitten in der Stadt – mit Blick auf das Aachener Rathaus.</p></div></a>
-    <a class="m reveal" href="grossanlagen.html"><img src="img/k-drohne-3-m.webp" srcset="img/k-drohne-3-m.webp 1000w, img/k-drohne-3.webp 2000w" sizes="(max-width: 900px) 100vw, 33vw" alt="Luftaufnahme: Monteure auf einer großen Photovoltaik-Dachanlage" width="2000" height="2000" loading="lazy" decoding="async"><div class="t"><span class="n">GROSSANLAGEN</span><h3>Dachflächen im großen Maßstab</h3><p>Gewerbe- und Industriedächer – geplant, gebaut und aus der Luft dokumentiert.</p></div></a>
-    <a class="m reveal" href="heizsysteme.html"><img src="img/k-heizung-2-m.webp" srcset="img/k-heizung-2-m.webp 1000w, img/k-heizung-2.webp 2000w" sizes="(max-width: 900px) 100vw, 33vw" alt="Anlagenmechaniker von Lebherz &amp; Partner bei der Installation einer Heizungsanlage" width="2000" height="2001" loading="lazy" decoding="async"><div class="t"><span class="n">HEIZSYSTEME</span><h3>Wärmepumpe, Pellets, Solar</h3><p>Installation und Inbetriebnahme durch unsere eigenen Anlagenmechaniker.</p></div></a>
-  </div>
-</div></section>
-
-<!-- ABLAUF -->
-<section class="sec process" id="ablauf">
-  <div class="wrap"><div class="sec-head"><p class="eyebrow">So läuft es ab</p><h2 class="h-l split">Vier Schritte bis zum eigenen Strom.</h2></div></div>
-  <div class="wrap"><div class="track" id="track">
-    <div class="p-card"><span class="idx">01</span><div><h3>Erstgespräch vor Ort</h3><p>Am Anfang steht eine persönliche Beratung bei Ihnen am Objekt. Gemeinsam dimensionieren wir Ihre PV-Anlage gemäß Ihrem individuellen Bedarf.</p></div></div>
-    <div class="p-card"><span class="idx">02</span><div><h3>Planung &amp; Berechnung</h3><p>Wahl der Module, Integration des Wechselrichters, Konfiguration von Speicher und Ladepunkten – und ein Blick auf Förderung und Finanzierung.</p></div></div>
-    <div class="p-card hl"><span class="idx">03</span><div><h3>Anträge &amp; Koordination</h3><p>Anmeldeunterlagen, Förderanträge, Genehmigungen: Wir erledigen den Papierkram und koordinieren Elektriker, Dachdecker und weitere Gewerke.</p></div></div>
-    <div class="p-card"><span class="idx">04</span><div><h3>Montage, Inbetriebnahme &amp; Wartung</h3><p>Montage und Abnahme, Inbetriebnahme, Einrichtung der Apps und Einführung. Danach kümmern wir uns auf Wunsch um Pflege und Wartung.</p></div></div>
-  </div></div>
+  <div class="wrap foot"><span>Scrollen zum Weiterschieben</span><div class="bar"><i></i></div><span>05 Bereiche</span></div>
 </section>
 
-<!-- ZITAT -->
-<section class="sec quote"><div class="wrap">
-  <blockquote class="split">„Am Anfang steht eine persönliche Beratung vor Ort. Gemeinsam dimensionieren wir Ihre PV-Anlage gemäß Ihrem individuellen Bedarf.“</blockquote>
-  <cite class="reveal">Tobias Lebherz, Geschäftsführer Lebherz &amp; Partner</cite>
+<!-- KARTEN-STAPEL: ABLAUF -->
+<section class="sec stack" id="ablauf"><div class="wrap">
+  <div class="ed"><span class="idx">03 — SO LÄUFT ES AB</span><div><h2 class="h-l split">Vier Schritte bis zum eigenen Strom.</h2></div></div>
+  <div class="cards">
+    <div class="scard"><div><div class="i">01</div><h3>Erstgespräch vor Ort</h3><p>Am Anfang steht eine persönliche Beratung bei Ihnen am Objekt. Gemeinsam dimensionieren wir Ihre PV-Anlage gemäß Ihrem individuellen Bedarf.</p></div><div class="img"><img src="img/k-montage-3-m.webp" srcset="img/k-montage-3-m.webp 1000w, img/k-montage-3.webp 2000w" sizes="40vw" alt="Monteur auf einem Dach mit Solarmodulen" width="2000" height="2000" loading="lazy" decoding="async"></div></div>
+    <div class="scard"><div><div class="i">02</div><h3>Planung &amp; Berechnung</h3><p>Wahl der Module, Integration des Wechselrichters, Konfiguration von Speicher und Ladepunkten – und ein Blick auf Förderung und Finanzierung.</p></div><div class="img"><img src="img/pv-tech-m.webp" srcset="img/pv-tech-m.webp 1000w, img/pv-tech.webp 2200w" sizes="40vw" alt="Techniker prüft ein Solarmodul" width="2200" height="1467" loading="lazy" decoding="async"></div></div>
+    <div class="scard"><div><div class="i">03</div><h3>Anträge &amp; Koordination</h3><p>Anmeldeunterlagen, Förderanträge, Genehmigungen: Wir erledigen den Papierkram und koordinieren Elektriker, Dachdecker und weitere Gewerke.</p></div><div class="img"><img src="img/k-drohne-2-m.webp" srcset="img/k-drohne-2-m.webp 1000w, img/k-drohne-2.webp 1700w" sizes="40vw" alt="Luftbild einer Dachanlage im Bau" width="1700" height="850" loading="lazy" decoding="async"></div></div>
+    <div class="scard"><div><div class="i">04</div><h3>Montage, Inbetriebnahme &amp; Wartung</h3><p>Montage und Abnahme, Inbetriebnahme, Einrichtung der Apps und Einführung. Danach kümmern wir uns auf Wunsch um Pflege und Wartung.</p></div><div class="img"><img src="img/k-montage-5-m.webp" srcset="img/k-montage-5-m.webp 1000w, img/k-montage-5.webp 1700w" sizes="40vw" alt="Montage-Team auf einem Flachdach" width="1700" height="850" loading="lazy" decoding="async"></div></div>
+  </div>
 </div></section>
 
-<section class="sec cta-sec"><div class="cta-glow"></div><div class="wrap">
-  <p class="eyebrow">Ihr regionaler Solarpartner im Raum Aachen</p>
-  <h2 class="h-l split">Vereinbaren Sie einen Beratungstermin vor Ort.</h2>
-  <p class="lead reveal">Am Anfang steht ein persönliches Gespräch bei Ihnen am Objekt. Wir rufen Sie innerhalb weniger Tage zurück und vereinbaren einen Termin – alles Weitere besprechen wir ausführlich vor Ort.</p>
-  <div class="actions reveal"><a class="btn btn-primary" href="kontakt.html">Beratungstermin vereinbaren</a><a class="btn btn-outline" href="tel:+49241477070">0241 47707-0</a></div>
-  <div class="contact-line"><span>Jakobstraße 218 · 52064 Aachen</span><span><a href="mailto:info@ib-lup.de">info@ib-lup.de</a></span></div>
+<!-- SCRUB-TEXT -->
+<section class="sec scrub"><div class="wrap">
+  <p><span class="sw">„Am</span> <span class="sw">Anfang</span> <span class="sw">steht</span> <span class="sw">eine</span> <span class="sw hi">persönliche</span> <span class="sw hi">Beratung</span> <span class="sw hi">vor</span> <span class="sw hi">Ort.</span> <span class="sw">Gemeinsam</span> <span class="sw">dimensionieren</span> <span class="sw">wir</span> <span class="sw">Ihre</span> <span class="sw">PV-Anlage</span> <span class="sw">gemäß</span> <span class="sw">Ihrem</span> <span class="sw">individuellen</span> <span class="sw">Bedarf.“</span></p>
+  <cite>Tobias Lebherz, Geschäftsführer Lebherz &amp; Partner</cite>
 </div></section>
+
+<!-- PARALLAX-KOLONNEN -->
+<section class="sec cols" id="praxis"><div class="wrap">
+  <div class="ed"><span class="idx">04 — AUS DER PRAXIS</span><div><h2 class="h-l split">Gebaut in Aachen und der Region.</h2></div></div>
+  <div class="grid">
+    <div class="col"><figure><img src="img/k-rathaus-m.webp" srcset="img/k-rathaus-m.webp 1000w, img/k-rathaus.webp 2000w" sizes="33vw" alt="Montagearbeiten an der PV-Anlage der Mayerschen Buchhandlung, im Hintergrund das Aachener Rathaus" width="2000" height="2000" loading="lazy" decoding="async"><figcaption>Mayersche Buchhandlung, Aachen</figcaption></figure><div class="txt">Eingespielte Montage-Teams, termingenau und kompetent.<small>Bei Produkten und Verarbeitung legen wir Wert auf höchste Qualitätsstandards.</small></div></div>
+    <div class="col"><figure><img src="img/k-drohne-3-m.webp" srcset="img/k-drohne-3-m.webp 1000w, img/k-drohne-3.webp 2000w" sizes="33vw" alt="Luftaufnahme: Monteure auf einer großen PV-Dachanlage" width="2000" height="2000" loading="lazy" decoding="async"><figcaption>Großanlage, Drohnenaufnahme</figcaption></figure><figure><img src="img/k-heizung-2-m.webp" srcset="img/k-heizung-2-m.webp 1000w, img/k-heizung-2.webp 2000w" sizes="33vw" alt="Anlagenmechaniker bei der Heizungsinstallation" width="2000" height="2001" loading="lazy" decoding="async"><figcaption>Heizsysteme</figcaption></figure></div>
+    <div class="col"><figure><img src="img/k-solarpark-m.webp" srcset="img/k-solarpark-m.webp 1000w, img/k-solarpark.webp 2200w" sizes="33vw" alt="Solarpark auf einer Freifläche" width="2200" height="1100" loading="lazy" decoding="async"><figcaption>Solarpark, Freifläche</figcaption></figure><figure><img src="img/k-team-bus-m.webp" srcset="img/k-team-bus-m.webp 1000w, img/k-team-bus.webp 2000w" sizes="33vw" alt="Zwei Mitarbeiter am Firmenwagen" width="2000" height="2000" loading="lazy" decoding="async"><figcaption>Das Team</figcaption></figure></div>
+  </div>
+</div></section>
+
+<!-- CTA GESPLITTET -->
+<section class="cta2" id="kontakt-cta">
+  <div class="a"><p class="eyebrow">Ihr regionaler Solarpartner im Raum Aachen</p><h2 class="split">Sprechen wir über Ihr Dach.</h2><p class="lead reveal">Vereinbaren Sie einen Beratungstermin vor Ort. Wir rufen Sie innerhalb weniger Tage zurück – alles Weitere besprechen wir ausführlich bei Ihnen.</p><a class="btn btn-primary reveal" href="kontakt.html">Beratungstermin vereinbaren</a></div>
+  <div class="b"><p class="eyebrow" style="color:#134094">Oder direkt</p><a class="big" href="tel:+49241477070">0241 47707-0</a><p class="lead reveal" style="margin-top:12px">Mo–Fr erreichbar. Oder per E-Mail an <a href="mailto:info@ib-lup.de" style="border-bottom:2px solid rgba(19,64,148,.35)">info@ib-lup.de</a></p><p class="meta">Lebherz &amp; Partner GmbH<br>Jakobstraße 218 · 52064 Aachen<br>Bitte nennen Sie uns die Adresse des Objekts und eine Telefonnummer, unter der Sie tagsüber erreichbar sind.</p></div>
+</section>
 
 </main>
 
