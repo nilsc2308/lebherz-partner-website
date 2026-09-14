@@ -324,6 +324,26 @@
   // Editorial-Kopf: Index-Linie wächst
   document.querySelectorAll('.ed .idx').forEach(el => gsap.from(el, { clipPath: 'inset(0 100% 0 0)', duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 85%' } }));
 
+
+  // Service-Zeitstrahl
+  document.querySelectorAll('.tl').forEach(tl => {
+    const items = [...tl.querySelectorAll('li')], list = tl.querySelector('.list'), fill = tl.querySelector('.fill'), pt = tl.querySelector('.pt');
+    const cnt = tl.querySelector('.cnt b'), cur = tl.querySelector('.cur'), phs = tl.querySelectorAll('.phs span');
+    const n = { v: 1 };
+    const setCur = i => {
+      items.forEach((li, k) => { li.classList.toggle('on', k === i); li.classList.toggle('done', k < i); });
+      cur.textContent = items[i].querySelector('b').textContent;
+      const ph = items[i].dataset.ph; phs.forEach(s => s.classList.toggle('on', s.dataset.ph === ph));
+      gsap.to(n, { v: i + 1, duration: .5, ease: 'power3.out', overwrite: true, onUpdate: () => cnt.textContent = String(Math.round(n.v)).padStart(2, '0') });
+    };
+    ScrollTrigger.create({ trigger: list, start: 'top 55%', end: 'bottom 55%', scrub: true, onUpdate: st => {
+      const h = list.offsetHeight * st.progress; fill.style.height = h + 'px'; pt.style.top = h + 'px';
+      let i = 0; items.forEach((li, k) => { if (li.offsetTop <= h + 10) i = k; }); setCur(i);
+    } });
+    items.forEach((li, k) => gsap.from(li, { x: -30, rotateY: -30, opacity: 0, transformPerspective: 800, duration: .9, ease: 'power3.out', scrollTrigger: { trigger: li, start: 'top 90%' } }));
+    setCur(0);
+  });
+
   // ---------- Foto-Scroll-Through (Startseite) ----------
   if (scene) {
     const $ = s => scene.querySelector(s), $$ = s => [...scene.querySelectorAll(s)];
